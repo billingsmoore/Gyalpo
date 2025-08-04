@@ -6,6 +6,9 @@ You can read more about the general idea in [Gyalpo: Toward Effective Buddhist Q
 
 If you are interested in contributing, please do not hesitate to contact me at billingsmoore [at] gmail [dot] com with 'Gyalpo' in the subject line.
 
+<img width="1600" height="1002" alt="image" src="https://github.com/user-attachments/assets/8b2530f3-7c7f-46cf-84b0-0f3e0bc8a789" />
+
+
 ## State of the Project
 
 Gyalpo is a multi-agent question-answering chatbot that relies on a 'Master Control Program'-style supervisory implementation.
