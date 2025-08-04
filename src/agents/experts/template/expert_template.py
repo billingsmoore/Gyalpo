@@ -58,7 +58,7 @@ class Expert(Agent):
 
         context = self.get_context(user_input)
 
-        return f"""Use the summarize the provided context for a response to the user query.
+        return f"""Summarize the provided context for a response to the user query.
                 user_query: {user_input} 
                 context: {context}
                 """

@@ -5,7 +5,7 @@ from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.document_loaders import WebBaseLoader
 
 URL = "your URL goes here"
-PERSISTENT_DIRECTORY = '../../expert_dbs/expert_db' # CHANGE THIS APPROPRIATELY
+PERSISTENT_DIRECTORY = 'expert_dbs/expert_db' # CHANGE THIS APPROPRIATELY
 
 loader = WebBaseLoader(URL)
 data = loader.load()

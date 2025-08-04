@@ -1,22 +1,59 @@
 """
-This file contains a minimal proof of concept implementation that demonstrate multiple agents and retreivel augmentation.
+This file contains a minimal proof of concept implementation that demonstrate multiple agents and retrievel augmentation.
 """
 
-from agents.experts.ethics_expert import EthicsExpert
 from agents.gateway_agent import Gateway
 
-CATEGORIES = ['ethics', 'philosophy', 'history']
+from agents.experts.ethics_expert import EthicsExpert
+from agents.experts.philosophy_expert import PhilosophyExpert
+from agents.experts.history_expert import HistoryExpert
+
+from agents.critic_agent import Critic
+from agents.synthesizer_agent import Synthesizer
+
+CATEGORIES = ['ETHICS', 'PHILOSOPHY', 'HISTORY']
 
 gateway_agent = Gateway(categories=CATEGORIES)
-ethics_agent = EthicsExpert()
+
+ethics_expert = EthicsExpert()
+philosophy_expert = PhilosophyExpert()
+history_expert = HistoryExpert()
+
+critic_agent = Critic()
+synthesizer_agent = Synthesizer()
 
 user_query = 'What does Buddhism say about stealing?'
 
 gateway_response = gateway_agent.chat(user_input=user_query)
+
 if gateway_response == 'NO':
     print("I'm sorry. This chatbot is only equipped to answer questions about Buddhism. If your question is about Buddhism, try rephrasing.")
+
 else:
     if gateway_response.upper() == "ETHICS":
-        response = ethics_agent.chat(user_input=user_query)
+        domain_expert_response = ethics_expert.chat(user_input=user_query)
+    elif gateway_response.upper() == "PHILOSOPHY":
+        domain_expert_response = philosophy_expert.chat(user_input=user_query)
+    elif gateway_response.upper() == "HISTORY":
+        domain_expert_response = history_expert.chat(user_input=user_query)
+    
+    if domain_expert_response:
 
-print(response)
+        critic_response = critic_agent.chat(
+                {'user_query': user_query, 
+                'current_answer': domain_expert_response}
+            )
+        
+        if critic_response == "YES":
+            print(domain_expert_response)
+
+        else:
+            synthesizer_response = synthesizer_agent.chat(
+                                            {
+                                                'user_query': user_query,
+                                                'current_answer': domain_expert_response,
+                                                'feedback': critic_response
+                                            }
+                                        )
+            
+            print(synthesizer_response)
