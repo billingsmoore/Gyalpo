@@ -13,9 +13,9 @@ If you are interested in contributing, please do not hesitate to contact me at b
 
 Gyalpo is a multi-agent question-answering chatbot that relies on a 'Master Control Program'-style supervisory implementation.
 
-The proof of concept implementation uses Gemma3n running on a local Ollama server, but this can be set very easily to a different Ollam compatible model of your choice.
+The proof of concept implementation uses Gemma3n running on a local Ollama server, but this can be set very easily to a different Ollama compatible model of your choice.
 
-The basic pipeline of the proof of concept implementation consists of the follwing agents:
+The basic pipeline of the proof of concept implementation consists of the following agents:
 
 1. Gateway Agent: verifies that the user input is relevant to Buddhism and decides which Domain Expert to refer the query to.
 2. Domain Experts: these agents use a RAG to find and summarize additional context for the user's question
