@@ -5,7 +5,7 @@ from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.document_loaders import WebBaseLoader
 
 URL = "your URL goes here"
-PERSISTENT_DIRECTORY = 'expert_dbs/expert_db' # CHANGE THIS APPROPRIATELY
+PERSISTENT_DIRECTORY = '../../expert_dbs/expert_db' # CHANGE THIS APPROPRIATELY
 
 loader = WebBaseLoader(URL)
 data = loader.load()
@@ -46,3 +46,6 @@ except Exception as e:
     for i, doc in enumerate(docs):
         if not doc.page_content or len(doc.page_content) > 2000:
             print(f"Problematic doc {i}: Length={len(doc.page_content)}")
+
+with open('db_logs.txt', 'a') as f:
+    f.write(f'{URL} added to {PERSISTENT_DIRECTORY}')

@@ -40,4 +40,4 @@ else:
 print(response)
 ```
 
-At present, the best way to contribute is to create additional Domain Experts, or to help refine the chat logging system. Future work will be focused on implementing the fuller pipeline described in [Gyalpo: Toward Effective Buddhist Question Answering With Large Language Models](https://forum.openpecha.org/t/gyalpo-toward-effective-buddhist-question-answering-with-large-language-models/421).
+At present, the best way to contribute is to [create additional Domain Experts](./doc/CreatingNewExperts.md), or to help refine the chat logging system. Future work will be focused on implementing the fuller pipeline described in [Gyalpo: Toward Effective Buddhist Question Answering With Large Language Models](https://forum.openpecha.org/t/gyalpo-toward-effective-buddhist-question-answering-with-large-language-models/421).
