@@ -1,6 +1,40 @@
 """
-This file contains a minimal proof of concept implementation that demonstrate multiple agents and retrievel augmentation.
-"""
+Buddhist Q&A System - Proof of Concept Implementation
+
+This file demonstrates a multi-agent system for answering Buddhist questions using:
+
+    Gateway classification
+
+    Domain-specific expertise
+
+    Quality assurance critique
+
+    Answer synthesis
+
+The system workflow:
+
+    Gateway determines if question is Buddhist-related and categorizes it
+
+    Appropriate domain expert generates initial answer
+
+    Critic evaluates answer quality
+
+    Synthesizer produces final response incorporating feedback
+
+Agents:
+
+    Gateway: Initial question classifier
+
+    EthicsExpert: Handles moral/conduct questions
+
+    PhilosophyExpert: Addresses metaphysical concepts
+
+    HistoryExpert: Covers historical developments
+
+    Critic: Ensures answer quality
+
+    Synthesizer: Produces polished final answers
+    """
 
 from agents.gateway_agent import Gateway
 
